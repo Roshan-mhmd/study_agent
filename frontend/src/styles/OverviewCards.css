@@ -1,0 +1,53 @@
+.overview-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+
+gap:18px;
+
+margin-bottom:35px;
+
+}
+
+.overview-card{
+
+background:white;
+
+padding:22px;
+
+border-radius:16px;
+
+text-align:center;
+
+border:1px solid #E2E8F0;
+
+box-shadow:0 5px 18px rgba(0,0,0,.08);
+
+}
+
+.overview-card h2{
+
+font-size:40px;
+
+margin:0;
+
+}
+
+.overview-card h3{
+
+margin:10px 0;
+
+color:#1E3A8A;
+
+font-size:28px;
+
+}
+
+.overview-card p{
+
+margin:0;
+
+color:#64748B;
+
+}

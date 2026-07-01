@@ -1,0 +1,67 @@
+.source-card{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:16px;
+
+    background:#F8FAFC;
+
+    border:1px solid #E2E8F0;
+
+    border-radius:12px;
+
+    padding:14px 18px;
+
+    margin-top:10px;
+
+    transition:.2s;
+
+}
+
+.source-card:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+.source-icon{
+
+    font-size:24px;
+
+}
+
+.source-details{
+
+    flex:1;
+
+}
+
+.source-name{
+
+    font-weight:600;
+
+    color:#1E293B;
+
+}
+
+.source-type{
+
+    margin-top:4px;
+
+    color:#64748B;
+
+    font-size:13px;
+
+}
+
+.source-link{
+
+    color:#2563EB;
+
+    font-weight:600;
+
+}

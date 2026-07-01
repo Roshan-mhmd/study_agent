@@ -1,0 +1,33 @@
+.chat-page{
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    background:#F8FAFC;
+
+}
+
+.chat-container{
+
+    flex:1;
+
+    overflow-y:auto;
+
+    padding:30px;
+
+    scroll-behavior:smooth;
+
+}
+
+.chat-input-wrapper{
+
+    padding:20px;
+
+    border-top:1px solid #E5E7EB;
+
+    background:white;
+
+}

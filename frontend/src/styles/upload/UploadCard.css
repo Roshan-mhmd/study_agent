@@ -1,0 +1,89 @@
+.upload-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    border:1px solid #E2E8F0;
+
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+
+}
+
+.upload-icon{
+
+    font-size:60px;
+
+    margin-bottom:15px;
+
+}
+
+.upload-card h2{
+
+    margin:0;
+
+    color:#0F172A;
+
+}
+
+.upload-card p{
+
+    color:#64748B;
+
+    margin:12px 0 25px;
+
+    line-height:1.6;
+
+}
+
+.upload-card input{
+
+    width:100%;
+
+    margin-bottom:20px;
+
+}
+
+.selected-file{
+
+    padding:12px;
+
+    background:#EFF6FF;
+
+    border-radius:8px;
+
+    color:#2563EB;
+
+    margin-bottom:18px;
+
+    font-weight:600;
+
+}
+
+.upload-card button{
+
+    background:#2563EB;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 22px;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+}
+
+.upload-card button:hover{
+
+    background:#1D4ED8;
+
+}

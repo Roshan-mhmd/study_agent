@@ -1,0 +1,46 @@
+.toast{
+
+    position:fixed;
+
+    bottom:30px;
+
+    right:30px;
+
+    background:#16A34A;
+
+    color:white;
+
+    padding:14px 22px;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.2);
+
+    z-index:9999;
+
+    animation:fadeIn .25s ease;
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
