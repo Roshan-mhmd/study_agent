@@ -36,7 +36,7 @@ function KnowledgeManagementPage() {
     try {
 
       const response = await api.get("/documents");
-
+        console.log(response.data);
       setDocuments(response.data);
 
     } catch (error) {
@@ -144,7 +144,9 @@ function KnowledgeManagementPage() {
         }}
       >
 
-        <QuickActions />
+        <QuickActions
+    onRefresh={loadDocuments}
+/>
 
       </Box>
 

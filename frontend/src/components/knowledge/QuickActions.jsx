@@ -1,3 +1,6 @@
+import WebsiteDialog from "./dialogs/WebsiteDialog";
+import { useState } from "react";
+import ManualDialog from "./dialogs/ManualDialog";
 import {
   Card,
   CardContent,
@@ -10,8 +13,12 @@ import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 import LanguageIcon from "@mui/icons-material/Language";
 import EditNoteIcon from "@mui/icons-material/EditNote";
 
-function QuickActions() {
+import UploadDialog from "./dialogs/UploadDialog";
 
+function QuickActions({ onRefresh }) {
+const [uploadOpen, setUploadOpen] = useState(false);
+ const [websiteOpen, setWebsiteOpen] = useState(false);
+ const [manualOpen, setManualOpen] = useState(false);
   const actions = [
 
     {
@@ -39,68 +46,133 @@ function QuickActions() {
 
   return (
 
-    <Stack
-      direction="row"
-      spacing={3}
-      sx={{
-        flexWrap: "wrap"
-      }}
-    >
+    <>
 
-      {actions.map((action, index) => (
+      <Stack
+        direction="row"
+        spacing={3}
+        sx={{
+          flexWrap: "wrap"
+        }}
+      >
 
-        <Card
-          key={index}
-          sx={{
-            flex: 1,
-            minWidth: 260,
-            borderRadius: 3
-          }}
-        >
+        {actions.map((action, index) => (
 
-          <CardContent>
+          <Card
+            key={index}
+            sx={{
+              flex: 1,
+              minWidth: 260,
+              borderRadius: 3
+            }}
+          >
 
-            <Stack
-              spacing={2}
-              alignItems="center"
-            >
+            <CardContent>
 
-              {action.icon}
-
-              <Typography
-                variant="h6"
+              <Stack
+                spacing={2}
+                alignItems="center"
               >
 
-                {action.title}
+                {action.icon}
 
-              </Typography>
+                <Typography variant="h6">
 
-              <Typography
-                color="text.secondary"
-                align="center"
-              >
+                  {action.title}
 
-                {action.description}
+                </Typography>
 
-              </Typography>
+                <Typography
+                  color="text.secondary"
+                  align="center"
+                >
 
-              <Button
-                variant="contained"
-              >
+                  {action.description}
 
-                {action.button}
+                </Typography>
 
-              </Button>
+                <Button
+                  variant="contained"
+                  onClick={() => {
 
-            </Stack>
+    if (index === 0) {
 
-          </CardContent>
+        setUploadOpen(true);
 
-        </Card>
+    }
 
-      ))}
+    else if (index === 1) {
 
-    </Stack>
+        setWebsiteOpen(true);
+
+    }
+
+    else if (index === 2) {
+
+        setManualOpen(true);
+
+    }
+}}
+                >
+
+                  {action.button}
+
+                </Button>
+
+              </Stack>
+
+            </CardContent>
+
+          </Card>
+
+        ))}
+
+      </Stack>
+
+      <UploadDialog
+
+        open={uploadOpen}
+
+        onClose={() => setUploadOpen(false)}
+
+        onSuccess={() => {
+
+          if (onRefresh) {
+
+            onRefresh();
+
+          }
+
+        }}
+
+      />
+    <WebsiteDialog
+
+    open={websiteOpen}
+
+    onClose={() => setWebsiteOpen(false)}
+
+    onSuccess={() => {
+
+        onRefresh?.();
+
+    }}
+
+/>
+<ManualDialog
+
+    open={manualOpen}
+
+    onClose={() => setManualOpen(false)}
+
+    onSuccess={() => {
+
+        onRefresh?.();
+
+    }}
+
+/>
+    </>
 
   );
 
